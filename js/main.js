@@ -26,6 +26,7 @@ btnAddWordGame.addEventListener("click", () => {
     scrStart.classList.add('hidden');
     scrGame.classList.add('hidden');
     scrAddWord.classList.remove('hidden');
+    inputAddWord.value = "";
     //spanErrorMsg.classList.remove("error");
 
 });
@@ -41,7 +42,7 @@ btnAddWord.addEventListener("click", () => {
         return;
     }
     secretsWords.push(addWord);
-    inputNewWord.value = "";
+    inputAddWord.value = "";
     scrStart.classList.remove('hidden');
     scrGame.classList.add('hidden');
     scrAddWord.classList.add('hidden');

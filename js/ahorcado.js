@@ -10,21 +10,22 @@ let spaceSize = 10;
 let canvasCenter = canvas.width / 2;
 let letterCenter = 0;
 
-brush.lineWidth=2;
-brush.fillStyle="black";
+//brush.lineWidth=2;
 brush.font="bold 10px arial";
-brush.strokeStyle ="black";
 
 //Function to create base of canvas
 function createBaseCanvas(){
-brush.fillStyle='black';
-brush.beginPath();
-brush.moveTo(100, 80);
-brush.lineTo(50, 100);
-brush.lineTo(150, 100);
-brush.lineTo(100, 80);
-
-brush.fill();
+    brush.beginPath();
+    brush.fillStyle='#804000';
+    brush.strokeStyle ="#804000";
+    brush.lineWidth=4;
+    brush.moveTo(100, 80);
+    brush.lineTo(50, 100);
+    brush.lineTo(150, 100);
+    brush.lineTo(100, 80);
+    brush.stroke();
+    brush.fill();
+    
 }
 
 //Function to create lines of the letters of the secret word
@@ -34,6 +35,10 @@ function createLinesWord(word){
     let yInicial = 115;
 
     for(let i=0; i < word.length; i++){
+        brush.beginPath();
+        brush.fillStyle='black';
+        brush.strokeStyle ="black";
+        brush.lineWidth=2;
         brush.moveTo(xInicial, yInicial); 
         brush.lineTo(xInicial + 20, yInicial);
         brush.stroke();
@@ -55,10 +60,14 @@ function clearCanvas(){
 function showHitLetter(letter, arrPositions){
     let yInicial = 112;
     arrPositions.forEach((position) => {
+        brush.beginPath();
+        brush.fillStyle='black';
+        brush.strokeStyle ="black";
         let xInicial = canvasCenter - letterCenter + 6;
         
         xInicial += (30 * position);
         brush.fillText(letter,xInicial,yInicial);
+        brush.stroke();
     });
 }
 
@@ -67,106 +76,146 @@ function showWrongLetter(wrongLetter){
     
     xInicialWrongLetter += (20 * indexWrongLetter);
     if (xInicialWrongLetter > canvas.width) {
-        xInicialWrongLetter = 5;//280;
-        yInicialWrongLetter = 145;//250;
+        xInicialWrongLetter = 5;
+        yInicialWrongLetter = 145;
         indexWrongLetter = 0;
     }
+    brush.beginPath();
+    brush.fillStyle='black';
+brush.strokeStyle ="black";
     brush.fillText(wrongLetter,xInicialWrongLetter,yInicialWrongLetter);
     xInicialWrongLetter = 10;
     indexWrongLetter++;
+    brush.stroke();
 }
 
 //Function to draw different part of the canvas
 function drawCanvasPart(round){
     switch(round){
         case 1: 
-            onePart();
+            horcaMastil();
             break;
         case 2: 
-            twoPart();
+            horcaViga();
             break;
         case 3: 
-            threePart();
+            horcaSoga();
             break;
         case 4: 
-            fourPart();
+            presoCabeza();
             break;
         case 5: 
-            fivePart();
+            presoTronco();
             break;
         case 6: 
-            sixPart();
+            presoManoDer();
             break;
         case 7: 
-            sevenPart();
+            presoManoIzq();
             break;
         case 8: 
-            eightPart();
+            presoPieDer();
             break;
         case 9: 
-            ninePart();
+            presoPieIzq();
             break;
     }
 }
 
 //Function to draw part 1 of the canvas
-function onePart(){
+function horcaMastil(){
+    brush.beginPath();
+    brush.fillStyle='#804000';
+    brush.strokeStyle ="#804000";
+    brush.lineWidth=4;
     brush.moveTo(100,80);
     brush.lineTo(100,20);
     brush.stroke();
 }
 
 //Function to draw part 2 of the canvas
- function twoPart(){
+ function horcaViga(){
+    brush.beginPath();
+    brush.fillStyle='#804000';
+    brush.strokeStyle ="#804000";
+    brush.lineWidth=4;
     brush.moveTo(100,20);
     brush.lineTo(180,20);
     brush.stroke();
  }
 
 //Function to draw part 3 of the canvas
-function threePart(){
+function horcaSoga(){
+    brush.beginPath();
+    brush.fillStyle='#804000';
+    brush.strokeStyle ="#804000";
+    brush.lineWidth=4;
     brush.moveTo(180,20);
     brush.lineTo(180,30);
     brush.stroke();
 }
 
 //Function to draw part 4 of the canvas
-function fourPart(){
+function presoCabeza(){
+    brush.beginPath();
+    brush.fillStyle='#fdddca';
+    brush.strokeStyle ="#fdddca";
+    brush.lineWidth=2;
     brush.beginPath();
     brush.arc(180,35,5, 0, 2*Math.PI);
     brush.stroke();
 }
 
 //Function to draw part 5 of the canvas
-function fivePart(){
+function presoTronco(){
+    brush.beginPath();
+    brush.fillStyle='#fdddca';
+    brush.strokeStyle ="#fdddca";
+    brush.lineWidth=2;
     brush.moveTo(180,40);
     brush.lineTo(180,55);
     brush.stroke();
 }
 
 //Function to draw part 6 of the canvas
-function sixPart(){
+function presoManoDer(){
+    brush.beginPath();
+    brush.fillStyle='#fdddca';
+    brush.strokeStyle ="#fdddca";
+    brush.lineWidth=2;
     brush.moveTo(180,45);
     brush.lineTo(185,50);
     brush.stroke();
 }
 
 //Function to draw part 7 of the canvas
-function sevenPart(){
+function presoManoIzq(){
+    brush.beginPath();
+    brush.fillStyle='#fdddca';
+    brush.strokeStyle ="#fdddca";
+    brush.lineWidth=2;
     brush.moveTo(180,45);
     brush.lineTo(175,50);
     brush.stroke();
 }
 
 //Function to draw part 8 of the canvas
-function eightPart(){
+function presoPieDer(){
+    brush.beginPath();
+    brush.fillStyle='#fdddca';
+    brush.strokeStyle ="#fdddca";
+    brush.lineWidth=2;
     brush.moveTo(180,55);
     brush.lineTo(185,60);
     brush.stroke();
 }
 
 //Function to draw part 9 of the canvas
-function ninePart(){
+function presoPieIzq(){
+    brush.beginPath();
+    brush.fillStyle='#fdddca';
+    brush.strokeStyle ="#fdddca";
+    brush.lineWidth=2;
     brush.moveTo(180,55);
     brush.lineTo(175,60);
     brush.stroke();
@@ -177,23 +226,28 @@ function showLooseMessage(secretWord){
     let msgError = "Fin del Juego!!";
     /*secretWord = secretWord.join('');
     let word = 'THE WORD WAS: ' + secretWord;*/
+    brush.beginPath();
     xInicial = canvasCenter;
     yInicial = 15;
     brush.font="bold 18px arial";
     brush.textAlign = 'center';
     brush.fillStyle="red";
+    brush.strokeStyle ="red";
     brush.fillText(msgError,xInicial,yInicial);
-    /*brush.fillStyle="salmon";
-    brush.fillText(word,xInicial - 50,yInicial + 80);*/
+    brush.stroke();
+
 }
 
 //Function to show message if won
 function showWinMessage(){
     let msgWin = "Ganaste, Felicidades!!!";
+    brush.beginPath();
     xInicial = canvasCenter;
     yInicial = 15;
     brush.font="bold 18px arial";
     brush.fillStyle="#114B5F";
+    brush.strokeStyle ="#114b5f";
     brush.textAlign = 'center';
     brush.fillText(msgWin,xInicial,yInicial);
+    brush.stroke();
 }
