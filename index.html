@@ -9,56 +9,63 @@
     <title>Juego del Ahorcado</title>
 </head>
 
-<body>
+<body class="bg-gradient-to-t from-cyan-200 to-indigo-300">
+    <div class="h-screen">
+        <nav class="flex items-center justify-between flex-wrap p-6">
+            <div class="flex items-center flex-shrink-0 text-white mr-6">
+                <img src="./img/ahorcado.png" class="fill-current h-8 w-8 mr-2" width="54" height="54">
+                <span class="font-semibold text-xl tracking-tight">Juego del Ahorcado</span>
+            </div>
+        </nav>
 
-    <body class="bg-gradient-to-r from-cyan-200 to-indigo-200">
-        <!--h1 class="text-3xl font-bold underline">
-            Juego del Ahorcado
-        </h1-->
-
-        <div id="start-screen" class="flex h-screen justify-center items-center">
+        <div id="start-screen" class="flex h-5/6 justify-center items-center">
             <div class="flex flex-col justify-center items-center">
-                <!--h1 class="text-3xl">HEADING</h1>
-                <p class="text-xl">Sub text</p-->
-                <button id="start-game" class="h-[105px] lg:h-[114px] w-[317px] bg-sky-500 rounded-lg hover:bg-sky-400 active:bg-sky-600">
+                <button id="start-game"
+                    class="h-[105px] lg:h-[114px] w-[317px] bg-sky-500 rounded-lg hover:bg-sky-400 active:bg-sky-600">
                     Iniciar Juego
                 </button>
-                <button id="add-word-game" class="mt-4 md:mt-6 h-[67px] w-[278px] md:w-[304px] lg:w-[280px] border-2 border-sky-500 rounded-lg hover:border-sky-400 active:border-sky-600">
+                <button id="add-word-game"
+                    class="mt-4 md:mt-6 h-[67px] w-[278px] md:w-[304px] lg:w-[280px] border-2 border-sky-500 rounded-lg hover:border-sky-400 active:border-sky-600">
                     Agregar nueva palabra
                 </button>
             </div>
         </div>
 
-        <div id="game-screen" class="flex h-screen justify-center items-center w-full hidden">
+        <div id="game-screen" class="flex h-full justify-center items-center w-full hidden">
             <div class="flex flex-col justify-center items-center w-full md:w-2/5">
-                <!--h1 class="text-3xl">HEADING</h1>
-                <p class="text-xl">Sub text</p-->
-                <canvas id="ahorcado" class="w-4/5 md:w-3/4 h-96" ></canvas>
-                <button id="restart-game" class="mt-4 md:mt-6 h-[67px] w-[278px] md:w-[304px] lg:w-[280px] border-2 border-sky-500 rounded-lg hover:border-sky-400 active:border-sky-600">
+                <canvas id="ahorcado" class="w-4/5 md:w-3/4 h-96"></canvas>
+                <button id="restart-game"
+                    class="mt-4 md:mt-6 h-[67px] w-[278px] md:w-[304px] lg:w-[280px] border-2 border-sky-500 rounded-lg hover:border-sky-400 active:border-sky-600">
                     Reiniciar Juego
                 </button>
             </div>
         </div>
 
-        <div id="add-word-screen" class="flex h-screen justify-center items-center w-full hidden">
+        <div id="add-word-screen" class="flex h-full justify-center items-center w-full hidden">
             <div class="flex flex-col justify-center items-center w-full md:w-2/5">
-                <!--h1 class="text-3xl">HEADING</h1>
-                <p class="text-xl">Sub text</p-->
-                    <label class="block">
-                        <span class="block text-sm font-medium text-slate-700">Ingresa nueva palabra</span>
-                        <!-- Using form state modifers, the classes can be identical for every input -->
-                        <input type="text" value="" id="input-add-word"
-                          class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
-                          focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"/>
-                      </label>
-                <button id="add-word" class="mt-4 md:mt-6 h-[67px] w-[278px] md:w-[304px] lg:w-[280px] border-2 border-sky-500 rounded-lg hover:border-sky-400 active:border-sky-600">
+                <label class="block">
+                    <span class="block text-sm font-medium text-slate-700">Ingresa nueva palabra</span>
+                    <input type="text" value="" id="input-add-word" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                          focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500" />
+                </label>
+                <button id="add-word"
+                    class="mt-4 md:mt-6 h-[67px] w-[278px] md:w-[304px] lg:w-[280px] border-2 border-sky-500 rounded-lg hover:border-sky-400 active:border-sky-600">
                     Agregar palabra
                 </button>
             </div>
         </div>
 
-        <script src="./js/ahorcado.js"></script>
-        <script src="./js/main.js"></script>
-    </body>
+        <footer class="text-white text-center lg:text-left">
+            <div class="text-gray-400 text-center p-3">
+                © 2022 Copyright:
+                <a class="text-gray-600" href="https://github.com/jjqz29/ONE_Challenge_Ahoracado_002">Juan José Quiroga
+                    Z.</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="./js/ahorcado.js"></script>
+    <script src="./js/main.js"></script>
+</body>
 
 </html>
